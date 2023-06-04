@@ -10,6 +10,11 @@ def test_get():
 def test_indexerror():
     with pytest.raises(IndexError):
         arrs.get([], 0, "test")
+        arrs.get([], 1)
+
+def test_AssertionError():
+    with pytest.raises(AssertionError):
+        assert arrs.get([1, 2, 3], 1, "test") == 3
 
 
 def test_slice():
